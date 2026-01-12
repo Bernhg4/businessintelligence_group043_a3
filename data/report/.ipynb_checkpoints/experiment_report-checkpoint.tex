@@ -1,0 +1,135 @@
+\documentclass[sigconf]{acmart}
+
+\AtBeginDocument{ \providecommand\BibTeX{ Bib\TeX } }
+\setcopyright{acmlicensed}
+\copyrightyear{2025}
+\acmYear{2025}
+\acmDOI{XXXXXXX.XXXXXXX}
+
+\acmConference[BI 2025]{Business Intelligence}{-}{-}
+
+\begin{document}
+
+\title{BI2025 Experiment Report - Group 43}
+%% ---Authors: Dynamically added ---
+
+          \author{Johanna Six}
+          \authornote{Student A, Matr.Nr.: 12019873}
+          \affiliation{
+            \institution{TU Wien}
+            \country{Austria}
+          }
+          
+          \author{Bernhard Siegl}
+          \authornote{Student B, Matr.Nr.: 76543210}
+          \affiliation{
+            \institution{TU Wien}
+            \country{Austria}
+          }
+          
+          \author{Bernhard Siegl}
+          \authornote{Student B, Matr.Nr.: 12120509}
+          \affiliation{
+            \institution{TU Wien}
+            \country{Austria}
+          }
+          
+
+\begin{abstract}
+  This report documents the machine learning experiment for Group 43, following the CRISP-DM process model.
+\end{abstract}
+
+\ccsdesc[500]{Computing methodologies~Machine learning}
+\keywords{CRISP-DM, Provenance, Knowledge Graph, Machine Learning}
+
+\maketitle
+
+%% --- 1. Business Understanding ---
+\section{Business Understanding}
+
+\subsection{Data Source and Scenario}
+The data source consists of 21 attributes and about 3000 rows. It contains data from December 2019 and 2020, that consists of the number of delayed, cancelled or diverted flights and the cause of delays. The data can be used by airlines to identify what causes the most flight delays / cancellations.
+
+\subsection{Business Objectives}
+The airline wants to improve punctuality and therefore reduce the number of delayed, cancelled flights.
+
+%% --- 2. Data Understanding ---
+\section{Data Understanding}
+\textbf{Dataset Description:} Airline delay counts per carrier per airport for December 2019 and December 2020.
+
+The following features were identified in the dataset:
+
+\begin{table}[h]
+  \caption{Raw Data Features}
+  \label{tab:features}
+  \begin{tabular}{lp{0.2\linewidth}p{0.4\linewidth}}
+    \toprule
+    \textbf{Feature Name} & \textbf{Data Type} & \textbf{Description} \\
+    \midrule
+    airport & string> & Three-letter airport code for arrival airport. \\
+    airport\_name & string> & Full name of the airport. \\
+    arr\_cancelled & integer> & Number of cancelled flights. \\
+    arr\_del15 & integer> & Flights arriving more than 15 minutes late. \\
+    arr\_delay & double> & Total delay time in minutes. \\
+    arr\_diverted & integer> & Number of diverted flights. \\
+    arr\_flights & integer> & Number of flights arriving at airport. \\
+    carrier & string> & Two-letter airline carrier code. \\
+    carrier\_ct & integer> & Flights delayed due to air carrier (e.g. no crew). \\
+    carrier\_delay & double> & Delay minutes due to air carrier issues. \\
+    carrier\_name & string> & Full airline carrier name. \\
+    late\_aircraft\_ct & integer> & Flights delayed due to a previous late aircraft. \\
+    late\_aircraft\_delay & double> & Delay minutes due to previous late aircraft. \\
+    month & integer> & Month (1–12) of data collection. \\
+    nas\_ct & integer> & Flights delayed due to National Aviation System. \\
+    nas\_delay & double> & Delay minutes due to National Aviation System. \\
+    security\_ct & integer> & Flights canceled due to security issues. \\
+    security\_delay & double> & Delay minutes due to security issues. \\
+    weather\_ct & integer> & Flights delayed due to weather. \\
+    weather\_delay & double> & Delay minutes due to weather. \\
+    year & gYear> & Year in which flight data was collected. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+%% --- 3. Data Preparation ---
+\section{Data Preparation}
+\subsection{Data Cleaning}
+Describe your Data preparation steps here and include respective graph data.
+
+
+%% --- 4. Modeling ---
+\section{Modeling}
+
+\subsection{Hyperparameter Configuration}
+The model was trained using the following hyperparameter settings:
+
+\begin{table}[h]
+  \caption{Hyperparameter Settings}
+  \label{tab:hyperparams}
+  \begin{tabular}{lp{0.4\linewidth}l}
+    \toprule
+    \textbf{Parameter} & \textbf{Description} & \textbf{Value} \\
+    \midrule
+    Learning Rate & ... & 1.23 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Training Run}
+A training run was executed with the following characteristics:
+\begin{itemize}
+    \item \textbf{Algorithm:} Random Forest Algorithm
+    \item \textbf{Start Time:} 2025-12-15 16:55:45
+    \item \textbf{End Time:} 2025-12-15 16:55:45
+    \item \textbf{Result:} R-squared Score = 1.2300
+\end{itemize}
+
+%% --- 5. Evaluation ---
+\section{Evaluation}
+
+%% --- 6. Deployment ---
+\section{Deployment}
+
+\section{Conclusion}
+
+\end{document}
